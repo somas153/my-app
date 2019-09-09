@@ -1,0 +1,22 @@
+<div class="form-inline">
+    <input type="search" id="myInput" (keyup)="myFunction()" placeholder="Search for movie names.." style="width: 25%">&nbsp;
+    <button class="btn btn-primary"  id="add" (click)="addMovie()">Add Movie</button>
+  </div>
+  <div class="table-responsive">
+    <table class="table" id="myTable" border="2px solid black">
+      <thead>
+        <tr>
+          <th>MovieName</th>
+          <th>Language</th>
+          <th>Genre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of tabledata | filterBy: userFilter">
+          <td>{{a.MovieName}}</td>
+          <td>{{a.Language}}</td>
+          <td>{{a.Genre}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
